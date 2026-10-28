@@ -1,0 +1,20 @@
+aws_region = "us-east-1"
+# Keep read-only for assistant inspection. A separately authorized deployment
+# process must supply deployment credentials; the assistant does not apply.
+aws_profile = "copilot-readonly"
+
+project_name           = "eds-byo-git-demo"
+source_repository_name = "aem-byo-git" # replace with your existing repository
+vpc_cidr               = "10.0.0.0/24" # generic private /24; choose for your environment
+
+# Replace documentation-only addresses and the example IAM principal.
+trusted_client_cidrs       = ["203.0.113.10/32"]
+git_client_principal_arns = ["arn:aws:iam::123456789012:user/REPLACE_ME"]
+
+destination_repository_url = "https://git.example.com/customer/site.git"
+sync_branch                = "main"
+lambda_image_uri           = "123456789012.dkr.ecr.us-east-1.amazonaws.com/eds-git-sync@sha256:REPLACE_WITH_IMAGE_DIGEST"
+
+# Documentation-only example, NOT a working destination. Replace with approved
+# destination ranges for your Git host. No production allowlist is shipped.
+allowed_destination_cidrs = ["192.0.2.128/28"]

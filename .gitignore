@@ -1,0 +1,55 @@
+.hlx/*
+coverage/*
+logs/*
+node_modules/*
+
+helix-importer-ui
+.DS_Store
+*.bak
+.idea
+
+# Ensure these files are tracked
+!CLAUDE.md
+!AGENTS.md
+
+# Separate local site checkout and generated AWS inspection output
+/aem-byo-git-adobe-hosted-repo/
+/aem-byo-git-public-github/
+/aem-byo-git-customer-private/
+/inspect.txt
+
+# Terraform state and local variables
+**/.terraform/
+*.tfvars
+*.tfvars.json
+terraform/.tfvars
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.plan
+**/tfplan
+**/tfplan.*
+**/plan.out
+**/plan.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+terraform/crash.log
+terraform/crash.*.log
+terraform/override.tf
+terraform/override.tf.json
+terraform/*_override.tf
+terraform/*_override.tf.json
+
+# Python caches and test output
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local security scan reports
+/gitleaks-report.*
